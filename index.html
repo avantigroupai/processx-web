@@ -40,7 +40,7 @@
       "description": "Free, open-source macOS process and priority monitor. Shows live CPU, GPU and memory, groups processes per app the way Activity Monitor does, and moves CPU hogs into the macOS background resource band with one click — fully reversible, no admin rights, no telemetry. Ships as a native Swift menu-bar app and as a zero-dependency local web app.",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "downloadUrl": "https://github.com/avantigroupai/ProcessX",
-      "softwareVersion": "1.1.0",
+      "softwareVersion": "1.2.0",
       "datePublished": "2026-08-11",
       "isAccessibleForFree": true,
       "license": "https://github.com/avantigroupai/ProcessX",
@@ -51,6 +51,7 @@
         "QuickFast: one click moves background CPU hogs into the macOS low-priority band",
         "Fully reversible throttling via the background resource band instead of renice",
         "Auto-tame watchdog moves sustained background hogs down automatically and restores them on focus",
+        "Opt-in hard CPU cap holds a chosen app under a set percentage by suspending and resuming it, off by default and released the moment the app comes to the front",
         "Processes grouped per app the way Activity Monitor groups them, with CLI sessions surfaced separately",
         "Browser rows expand to real open tabs by name so a single heavy tab can be slowed",
         "Never touches the frontmost app, protected system processes, media and call apps, or other users' processes",
@@ -555,6 +556,11 @@
         <p>Optional and off by default. Any <em>background</em> process that stays over the threshold for three consecutive samples gets moved down automatically — the classic runaway <span class="mono">ffmpeg</span>. Bring the app to the front and it's restored instantly.</p>
       </div>
       <div class="feat">
+        <div class="ib"><svg class="icon" viewBox="0 0 24 24"><path d="M4 17a9 9 0 1 1 16 0"/><path d="m12 15 3.5-4.5"/><circle cx="12" cy="17" r="1.1"/></svg></div>
+        <h3>Hard CPU cap, opt-in</h3>
+        <p>When you need an actual number rather than a nudge: <em>cap at 25% of a core</em> holds an app's whole process group there. This is the one action that <strong>suspends</strong> — macOS offers no CPU quota, so a cap has to stop and resume the app on a duty cycle. Off by default, never the app you're using, never media or call apps, released the instant you bring it to the front, and it lets go of everything even if ProcessX is force-quit mid-cycle.</p>
+      </div>
+      <div class="feat">
         <div class="ib"><svg class="icon" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M8 9h8M8 13h5"/></svg></div>
         <h3>Grouped like Activity Monitor</h3>
         <p>Chrome and its sixty helpers are one row, not sixty. And a terminal-hosted CLI session — an AI coding agent, a build, a dev server — surfaces as its own top-level row instead of hiding inside “Terminal”.</p>
@@ -599,7 +605,7 @@ cp -R build/ProcessX.app /Applications/</div>
         <h3><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01"/></svg> Zero-dependency web app</h3>
         <p>A single Node file with <strong>no npm dependencies</strong>, serving a local dashboard on <span class="mono">127.0.0.1:4747</span>. Handy on machines you don't want to build Swift on, and the reason the security model below exists.</p>
         <div class="codeblock" style="margin-top:20px;max-width:none">node server.js   <span class="c"># → http://localhost:4747</span>
-npm test         <span class="c"># 161 checks</span></div>
+npm test         <span class="c"># 179 checks</span></div>
       </div>
     </div>
   </div>
@@ -644,7 +650,7 @@ npm test         <span class="c"># 161 checks</span></div>
       <p>Both builds ship their own harness, and both of them throttle a <em>sacrificial process the harness spawned itself</em> to prove the kernel really moved it — and moved it back.</p>
     </div>
     <div class="stats">
-      <div class="stat"><div class="n">161</div><div class="l">checks in the web harness</div><div class="s">security, contract, fuzz, a11y, e2e</div></div>
+      <div class="stat"><div class="n">179</div><div class="l">checks in the web harness</div><div class="s">security, contract, fuzz, a11y, e2e</div></div>
       <div class="stat"><div class="n">30</div><div class="l">checks in the Swift self-test</div><div class="s">real syscalls, real child process</div></div>
       <div class="stat"><div class="n">0<small> deps</small></div><div class="l">npm packages</div><div class="s">and zero Swift packages</div></div>
       <div class="stat"><div class="n">0<small>/sample</small></div><div class="l">subprocesses, native build</div><div class="s">down from ~8 every 2 s</div></div>
@@ -719,7 +725,7 @@ npm test         <span class="c"># 161 checks</span></div>
         <div class="num">Phase 1</div>
         <h3>Build the harness first</h3>
         <p>Before any hardening, a zero-dependency harness was written that spins up its own server on a private port with an isolated state file, so tests could never touch a real machine's throttles. Everything after this is measured, not asserted.</p>
-        <div class="agents"><svg class="icon" viewBox="0 0 24 24"><path d="m4.5 12.5 5 5 10-11"/></svg> 161 checks, eight suites</div>
+        <div class="agents"><svg class="icon" viewBox="0 0 24 24"><path d="m4.5 12.5 5 5 10-11"/></svg> 179 checks, eight suites</div>
       </div>
       <div class="step">
         <div class="num">Phase 2</div>
@@ -811,7 +817,7 @@ swift run -c release ProcessX --selftest   <span class="c"># 30 real-syscall che
       <p>Node 18 or later. No npm install step — there are no dependencies to install.</p>
       <div class="codeblock" style="margin-top:16px">cd ProcessX
 node server.js   <span class="c"># → http://localhost:4747</span>
-npm test         <span class="c"># 161-check QA harness</span></div>
+npm test         <span class="c"># 179-check QA harness</span></div>
       <p style="margin-top:20px">Expanding a browser row to see its real tab names asks macOS for Automation permission the first time. Decline it and the row falls back to renderer PIDs — nothing else changes.</p>
     </div>
   </div>
