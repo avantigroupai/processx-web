@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="9iVKWvfumrLXQbMhZmEXtDU1JXfunhPsiNTJTKvdQNM" />
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XST1TY4JVD"></script>
 <script>
@@ -13,7 +14,7 @@
   gtag('config', 'G-XST1TY4JVD');
 </script>
 <title>ProcessX — macOS process monitor that makes a busy Mac responsive again (free, open source)</title>
-<meta name="description" content="ProcessX is a free, open-source macOS process and priority monitor. One click moves CPU hogs into the macOS background band — fully reversible — so the app you're actually using stays snappy. A free App Tamer alternative and a real fix for a slow Mac, without admin rights.">
+<meta name="description" content="ProcessX is a free, open-source macOS process and priority monitor. One click moves CPU hogs into the macOS background band — fully reversible — so the app you're actually using stays snappy, plus an opt-in hard CPU cap per app. A free App Tamer alternative and a real fix for a slow Mac, without admin rights.">
 <meta name="keywords" content="mac process monitor, macOS CPU hog, how to fix a slow Mac, limit CPU usage macOS, throttle process mac, taskpolicy macOS, macOS background band, Activity Monitor alternative, App Tamer alternative, iStat Menus alternative, mac menu bar CPU monitor, renice mac, deprioritize process macOS, stop Chrome using CPU mac, open source mac process manager">
 <link rel="canonical" href="https://avantigroupai.github.io/processx-web/">
 <meta property="og:type" content="website">
@@ -75,7 +76,7 @@
         {
           "@type": "Question",
           "name": "Is ProcessX a free alternative to App Tamer?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. App Tamer is a well-regarded paid macOS utility that slows CPU-hungry apps by repeatedly stopping and resuming them. ProcessX is free and open source and takes a different approach: it moves processes into the macOS background resource band and lets the kernel scheduler do the work, so the process is never suspended and the change is a single reversible call." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. App Tamer is a well-regarded paid macOS utility that slows CPU-hungry apps by repeatedly stopping and resuming them. ProcessX is free and open source and defaults to a different approach: it moves processes into the macOS background resource band and lets the kernel scheduler do the work, so the process is never suspended and the change is a single reversible call. The native app also offers an opt-in hard CPU cap, which does use the stop-and-resume technique, off by default and never applied to the app you are using, to system processes or to media and call apps." }
         },
         {
           "@type": "Question",
@@ -667,8 +668,8 @@ npm test         <span class="c"># 161 checks</span></div>
         <tbody>
           <tr class="me">
             <td><strong>ProcessX</strong></td><td>Free, open source</td>
-            <td>Moves processes into the macOS background resource band, reversibly</td>
-            <td>The process is never suspended and never killed; one-click QuickFast for the whole system; an opt-in watchdog; hard no-touch list for foreground, system and media apps</td>
+            <td>Moves processes into the macOS background resource band, reversibly — plus an opt-in hard CPU cap</td>
+            <td>Nothing is ever killed, and by default nothing is suspended either; one-click QuickFast for the whole system; an opt-in watchdog; an opt-in per-app percentage cap that is off by default; hard no-touch list for foreground, system and media apps</td>
           </tr>
           <tr>
             <td>Activity Monitor</td><td>Built in</td><td>The definitive read-only view of what your Mac is doing</td>
@@ -676,7 +677,7 @@ npm test         <span class="c"># 161 checks</span></div>
           </tr>
           <tr>
             <td>App Tamer</td><td>~$15 one-time</td><td>Stops and resumes CPU-hungry apps to hold them under a set percentage</td>
-            <td>App Tamer is mature, polished and gives you a precise CPU cap per app. ProcessX is free and open source and never suspends a process — it hands the decision to the kernel scheduler, so throttled work still runs flat out whenever the foreground is idle</td>
+            <td>App Tamer is mature and polished, and capping is what it is built around. ProcessX is free and open source, and its default action suspends nothing — it hands the decision to the kernel scheduler, so throttled work still runs flat out whenever the foreground is idle. ProcessX does now offer a hard cap using the same stop-and-resume technique, but as an opt-in that is off by default</td>
           </tr>
           <tr>
             <td>iStat Menus</td><td>Paid</td><td>The best-in-class menu-bar system monitor</td>
@@ -756,7 +757,7 @@ npm test         <span class="c"># 161 checks</span></div>
       </details>
       <details>
         <summary>Is ProcessX a free alternative to App Tamer?</summary>
-        <p>Yes, though the mechanism differs. App Tamer is a mature paid utility that holds an app under a CPU cap by repeatedly stopping and resuming it. ProcessX is free and open source and never suspends anything: it changes the scheduling band and lets the kernel decide, so a throttled process still runs at full speed whenever your foreground is idle. If you need a hard percentage cap, App Tamer does that and ProcessX doesn't.</p>
+        <p>Yes. App Tamer is a mature paid utility that holds an app under a CPU cap by repeatedly stopping and resuming it. ProcessX is free and open source, and its default action suspends nothing: it changes the scheduling band and lets the kernel decide, so a throttled process still runs at full speed whenever your foreground is idle. The native app also has a hard percentage cap, which necessarily works the same way App Tamer's does — it repeatedly suspends and resumes the app. It is off by default, set per app from a menu, never applied to the app you're using, to system processes or to media and call apps, and released the moment you bring the app to the front. A suspended app can't respond while it's stopped, so reach for "Slow down" first and the cap only when you need a specific number.</p>
       </details>
       <details>
         <summary>Why not just use <span class="mono">renice</span>?</summary>
