@@ -185,6 +185,14 @@
     overflow-x: hidden;
   }
   a { color: inherit; text-decoration: none; }
+  p a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--line-strong);
+    text-underline-offset: 3px;
+    transition: color .15s, text-decoration-color .15s;
+  }
+  p a:hover { color: var(--accent); text-decoration-color: var(--accent); }
   svg { display: block; }
   .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 32px; }
   .icon { width: 1em; height: 1em; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
@@ -230,10 +238,10 @@
     padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--pane);
     margin-bottom: 26px;
   }
-  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex: none; }
   h1 {
     font-size: clamp(38px, 6vw, 66px); line-height: 1.04; letter-spacing: -0.03em; font-weight: 680;
-    max-width: 22ch; margin-bottom: 26px;
+    max-width: 24ch; margin-bottom: 26px; text-wrap: balance;
   }
   h1 .muted { color: var(--ink-3); }
   .lede { font-size: clamp(17px, 2.1vw, 21px); color: var(--ink-2); max-width: 58ch; margin-bottom: 36px; }
@@ -259,8 +267,8 @@
   .titlebar .title .icon { width: 13px; height: 13px; }
   .app { padding: 16px; display: grid; gap: 14px; }
 
-  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-  .tile { background: var(--pane); border: 1px solid var(--line); border-radius: 11px; padding: 13px 15px; }
+  .tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .tile { background: var(--pane); border: 1px solid var(--line); border-radius: 11px; padding: 13px 15px; min-width: 0; }
   .tile .lab { display: flex; align-items: center; gap: 7px; font-size: 11.5px; color: var(--ink-2); }
   .tile .lab .icon { width: 13px; height: 13px; color: var(--ink-3); }
   .tile .val { font-size: 24px; font-weight: 660; letter-spacing: -0.02em; margin-top: 6px; font-variant-numeric: tabular-nums; }
@@ -268,7 +276,7 @@
   .tile .meter { height: 6px; border-radius: 3px; background: var(--accent-soft); margin-top: 9px; overflow: hidden; }
   .tile .meter i { display: block; height: 100%; background: var(--accent); }
   .tile .ft { font-size: 10.5px; color: var(--ink-4); margin-top: 7px; }
-  @media (max-width: 720px) { .tiles { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 720px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
   .ptable { background: var(--pane); border: 1px solid var(--line); border-radius: 11px; overflow: hidden; }
   .ptable .hd, .ptable .r { display: grid; grid-template-columns: 1fr 74px 78px 96px 92px; align-items: center; gap: 10px; padding: 9px 15px; }
@@ -300,9 +308,9 @@
   h2 { font-size: clamp(28px, 4vw, 42px); line-height: 1.1; letter-spacing: -0.025em; font-weight: 660; margin-bottom: 18px; }
   .sec-head p { font-size: 18px; color: var(--ink-2); }
 
-  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-  @media (max-width: 820px) { .split { grid-template-columns: 1fr; } }
-  .card { background: var(--pane); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; }
+  .split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+  @media (max-width: 820px) { .split { grid-template-columns: minmax(0, 1fr); } }
+  .card { background: var(--pane); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; min-width: 0; display: flex; flex-direction: column; }
   .card h3 { font-size: 19px; font-weight: 640; margin-bottom: 12px; letter-spacing: -0.01em; display: flex; align-items: center; gap: 10px; }
   .card h3 .icon { width: 20px; height: 20px; color: var(--ink); flex: none; }
   .card p { color: var(--ink-2); font-size: 15px; }
@@ -310,13 +318,14 @@
   .card.bad { opacity: .82; }
   .card .tag { font-size: 12px; font-weight: 650; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-4); margin-bottom: 16px; }
   .card.good .tag { color: var(--accent); }
-  .formula { margin-top: 20px; font-family: var(--mono); font-size: 13px; color: var(--ink-2); background: var(--bg-2); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; line-height: 1.7; }
+  .card .codeblock { margin-top: auto; width: 100%; }
+  .formula { margin-top: auto; font-family: var(--mono); font-size: 11px; letter-spacing: -0.01em; color: var(--ink-2); background: var(--bg-2); border: 1px solid var(--line); border-radius: 10px; padding: 13px 14px; line-height: 1.75; overflow-x: auto; white-space: pre; }
   .formula b { color: var(--ink); }
 
-  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-  @media (max-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
-  .feat { background: var(--pane); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 28px; transition: border-color .18s, transform .18s; }
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+  @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 600px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+  .feat { background: var(--pane); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 28px; min-width: 0; transition: border-color .18s, transform .18s; }
   .feat:hover { border-color: var(--line-strong); transform: translateY(-2px); }
   /* Bare icons, no container chrome: the glyph aligns flush with the heading below it. */
   .feat .ib { display: flex; align-items: center; margin-bottom: 22px; }
@@ -325,11 +334,13 @@
   .feat .ib .icon { width: 32px; height: 32px; color: var(--ink); stroke-width: 1.4; }
   .feat h3 { font-size: 17.5px; font-weight: 640; margin-bottom: 10px; letter-spacing: -0.01em; }
   .feat p { color: var(--ink-2); font-size: 14.5px; }
+  .feat.wide p, .card.wide p { max-width: 78ch; }
   kbd { font-family: var(--mono); font-size: 11.5px; background: var(--pane-2); border: 1px solid var(--line-strong); border-bottom-width: 2px; border-radius: 6px; padding: 2px 7px; color: var(--ink); }
   .mono { font-family: var(--mono); font-size: 0.92em; }
 
-  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-  @media (max-width: 760px) { .stats { grid-template-columns: 1fr 1fr; gap: 32px; } }
+  .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+  @media (max-width: 760px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; } }
+  .stat { min-width: 0; }
   .stat .n { font-size: clamp(34px, 5vw, 52px); font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
   .stat .n small { font-size: 0.5em; font-weight: 600; color: var(--ink-3); letter-spacing: 0; }
   .stat .l { margin-top: 12px; font-size: 14px; color: var(--ink-2); }
@@ -338,18 +349,18 @@
   .keys { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
   .keys .krow { display: inline-flex; align-items: center; gap: 10px; background: var(--pane); border: 1px solid var(--line); border-radius: 10px; padding: 11px 16px; font-size: 14px; color: var(--ink-2); }
 
-  .pipe { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-  @media (max-width: 820px) { .pipe { grid-template-columns: 1fr; } }
-  .step { background: var(--pane); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 28px; }
+  .pipe { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+  @media (max-width: 820px) { .pipe { grid-template-columns: minmax(0, 1fr); } }
+  .step { background: var(--pane); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 28px; min-width: 0; display: flex; flex-direction: column; }
   .step .num { font-family: var(--mono); font-size: 12.5px; color: var(--accent); font-weight: 600; margin-bottom: 16px; }
   .step h3 { font-size: 17.5px; font-weight: 640; margin-bottom: 10px; }
   .step p { color: var(--ink-2); font-size: 14.5px; }
-  .step .agents { margin-top: 18px; font-size: 12.5px; color: var(--ink-4); display: flex; align-items: center; gap: 8px; }
+  .step .agents { margin-top: auto; padding-top: 18px; font-size: 12.5px; color: var(--ink-4); display: flex; align-items: center; gap: 8px; }
   .step .agents .icon { width: 14px; height: 14px; }
 
   .cta-band { text-align: center; }
   .cta-band h2 { max-width: 20ch; margin: 0 auto 20px; }
-  .cta-band p { max-width: 56ch; margin: 0 auto 34px; color: var(--ink-2); font-size: 18px; }
+  .cta-band > p { max-width: 56ch; margin: 0 auto 34px; color: var(--ink-2); font-size: 18px; }
   .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
   .cta-actions .btn { padding: 14px 28px; font-size: 15.5px; }
   .codeblock { max-width: 620px; margin: 20px auto 0; text-align: left; background: var(--bg-2); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; font-family: var(--mono); font-size: 13px; color: var(--ink-2); line-height: 1.9; overflow-x: auto; white-space: pre; }
@@ -358,6 +369,7 @@
   .install { max-width: 640px; margin: 44px auto 0; text-align: left; }
   .install h3 { font-size: 17px; font-weight: 640; margin-bottom: 10px; }
   .install p { color: var(--ink-2); font-size: 14.5px; }
+  .install .codeblock { max-width: none; }
 
   .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--pane); }
   table.cmp { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 880px; }
@@ -372,9 +384,9 @@
   .faq { display: grid; gap: 12px; max-width: 820px; }
   .faq details { background: var(--pane); border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px; transition: border-color .18s; }
   .faq details[open] { border-color: var(--line-strong); }
-  .faq summary { font-size: 16px; font-weight: 600; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .faq summary { font-size: 16px; font-weight: 600; cursor: pointer; list-style: none; position: relative; padding-right: 32px; }
   .faq summary::-webkit-details-marker { display: none; }
-  .faq summary::after { content: "+"; font-size: 20px; font-weight: 400; color: var(--ink-3); flex: none; line-height: 1; }
+  .faq summary::after { content: "+"; font-size: 20px; font-weight: 400; color: var(--ink-3); line-height: 1; position: absolute; right: 0; top: 50%; transform: translateY(-50%); }
   .faq details[open] summary::after { content: "–"; }
   .faq details p { margin-top: 14px; color: var(--ink-2); font-size: 15px; }
   .faq details p + p { margin-top: 12px; }
@@ -386,8 +398,17 @@
   .foot-badges { display: flex; gap: 22px; flex-wrap: wrap; }
   .foot-badges span { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-3); }
   .foot-badges .icon { width: 15px; height: 15px; }
-  .foot-links { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 30px; font-size: 13.5px; color: var(--ink-3); width: 100%; border-top: 1px solid var(--line); padding-top: 26px; }
+  .foot-links { display: flex; gap: 12px 18px; flex-wrap: wrap; font-size: 13.5px; color: var(--ink-3); width: 100%; border-top: 1px solid var(--line); padding-top: 26px; }
   .foot-links a:hover { color: var(--ink); }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 0 20px; }
+    header.hero { padding: 56px 0 48px; }
+    section { padding: 64px 0; }
+    .sec-head { margin-bottom: 36px; }
+    .eyebrow { border-radius: 14px; }
+    .card, .feat, .step { padding: 24px 22px; }
+  }
 </style>
 </head>
 <body>
@@ -445,7 +466,7 @@
   </div>
 </header>
 
-<!-- Agent CPU: non-product cause first, background band second. Not published. -->
+<!-- Agent CPU: non-product cause first, background band second. -->
 <section id="agents">
   <div class="wrap">
     <div class="sec-head">
@@ -453,15 +474,15 @@
       <h2>Claude Code, Cursor or Codex is using all your CPU.</h2>
       <p>Idle Claude Code at half a core has a file-and-hook cause. Cursor and Codex spinning their fans are separate bugs in those apps. Fix that first. The background band is the second lever, for when the work is real and the window in front of you still has to stay typed-into.</p>
     </div>
-    <div class="grid">
-      <div class="feat">
-        <div class="ib"><svg class="icon" viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg></div>
-        <h3>Claude Code, idle at 50–60%</h3>
-        <p>On 1 February 2026 an M4 Mac mini (16&nbsp;GB) was running two Claude Code sessions that were only waiting for input. Activity Monitor showed them at 62% and 52% CPU, and VS Code lagged while the owner typed. Two or three sessions pushed Claude's total past 100% CPU. <a href="https://www.reddit.com/r/ClaudeAI/comments/1qt1f5y/does_anyone_face_high_cpu_usage_when_using_claude/">The thread</a> is the report.</p>
-        <p style="margin-top:10px">The replies traced it to session files, not to a busy model. A session-start hook — the one named there is the superpowers skill — writes <span class="mono">saved_hook_context</span> into <span class="mono">~/.claude/projects/**/*.jsonl</span>. <a href="https://github.com/anthropics/claude-code/issues/22245">Claude Code issue 22245</a> shows the failure mode: the same UUID stored twice, with different parents, so the loader walks a cycle and sits at 100% CPU until that file is gone. <a href="https://github.com/anthropics/claude-code/issues/29953">Issue 29953</a>, on macOS 26.3, is the same shape from the claude-mem SessionStart hook: a 67&nbsp;KB transcript with eight of those entries sits at 100% CPU on the next launch, and an empty session directory does not. People on the thread cleared the idle burn by turning that hook off, and by removing the jsonl it had already written.</p>
-        <div class="codeblock" style="margin-top:14px;max-width:none">find ~/.claude/projects -name "*.jsonl" -exec grep -l "saved_hook_context" {} \;</div>
-        <p style="margin-top:10px">That command only lists files. Deleting one throws away that session's transcript. Issue 22245's narrower workaround is to remove orphaned jsonl files in that folder that <span class="mono">sessions-index.json</span> no longer names, because each frozen launch writes another.</p>
-      </div>
+    <div class="feat wide">
+      <div class="ib"><svg class="icon" viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg></div>
+      <h3>Claude Code, idle at 50–60%</h3>
+      <p>On 1 February 2026 an M4 Mac mini (16&nbsp;GB) was running two Claude Code sessions that were only waiting for input. Activity Monitor showed them at 62% and 52% CPU, and VS Code lagged while the owner typed. Two or three sessions pushed Claude's total past 100% CPU. <a href="https://www.reddit.com/r/ClaudeAI/comments/1qt1f5y/does_anyone_face_high_cpu_usage_when_using_claude/">The thread</a> is the report.</p>
+      <p style="margin-top:10px">The replies traced it to session files, not to a busy model. A session-start hook — the one named there is the superpowers skill — writes <span class="mono">saved_hook_context</span> into <span class="mono">~/.claude/projects/**/*.jsonl</span>. <a href="https://github.com/anthropics/claude-code/issues/22245">Claude Code issue 22245</a> shows the failure mode: the same UUID stored twice, with different parents, so the loader walks a cycle and sits at 100% CPU until that file is gone. <a href="https://github.com/anthropics/claude-code/issues/29953">Issue 29953</a>, on macOS 26.3, is the same shape from the claude-mem SessionStart hook: a 67&nbsp;KB transcript with eight of those entries sits at 100% CPU on the next launch, and an empty session directory does not. People on the thread cleared the idle burn by turning that hook off, and by removing the jsonl it had already written.</p>
+      <div class="codeblock" style="margin-top:14px;max-width:none">find ~/.claude/projects -name "*.jsonl" -exec grep -l "saved_hook_context" {} \;</div>
+      <p style="margin-top:10px">That command only lists files. Deleting one throws away that session's transcript. Issue 22245's narrower workaround is to remove orphaned jsonl files in that folder that <span class="mono">sessions-index.json</span> no longer names, because each frozen launch writes another.</p>
+    </div>
+    <div class="split" style="gap:22px;margin-top:22px">
       <div class="feat">
         <div class="ib"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v12H4z"/><path d="M8 20h8M12 16v4"/></svg></div>
         <h3>Cursor 3, fans after the project is closed</h3>
@@ -475,7 +496,7 @@
         <p style="margin-top:10px">That is the Codex desktop app, not a corrupt Claude transcript. Report it upstream. Quitting Codex is what brought CPU back down.</p>
       </div>
     </div>
-    <div class="card" style="margin-top:28px">
+    <div class="card wide" style="margin-top:22px">
       <div class="tag">Only after the cause is real work</div>
       <h3><svg class="icon" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z"/></svg> Then the background band</h3>
       <p>Moving a wedged Claude session into the background does not end the loop. The core stays busy. It only stops winning fights with the app in front of you, which is why the file and the hook come first.</p>
@@ -503,8 +524,8 @@
       <div class="card good">
         <div class="tag">ProcessX</div>
         <h3><svg class="icon" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z"/></svg> Reprioritize, reversibly</h3>
-        <p>One click drops the process into the macOS background band. It keeps running, keeps finishing your encode or your build — it just stops competing with the window you're looking at. Another click lifts it straight back out.</p>
-        <div class="formula">slow down &nbsp;→&nbsp; <b>setpriority(PRIO_DARWIN_PROCESS, pid, PRIO_DARWIN_BG)</b><br>restore &nbsp;&nbsp;&nbsp;→&nbsp; <b>… , PRIO_DARWIN_NONE)</b></div>
+        <p style="margin-bottom:20px">One click drops the process into the macOS background band. It keeps running, keeps finishing your encode or your build — it just stops competing with the window you're looking at. Another click lifts it straight back out.</p>
+        <div class="formula">slow down → <b>setpriority(PRIO_DARWIN_PROCESS, pid, PRIO_DARWIN_BG)</b><br>restore   → <b>… , PRIO_DARWIN_NONE)</b></div>
       </div>
     </div>
   </div>
@@ -535,25 +556,9 @@
         <p>New in 1.2.4. A sortable GPU column next to CPU and Memory, read straight from IOKit with no admin rights. Click the CPU, GPU or Memory card to sort by it, or the Slowed down card to see only what's throttled or capped. Columns resize and scale with the window, so Cap, Slow down and Quit always stay in reach.</p>
       </div>
       <div class="feat">
-        <div class="ib"><svg class="icon" viewBox="0 0 24 24"><path d="M6 17h12M7 17v-5a5 5 0 0 1 10 0v5"/><path d="M10.5 20a1.6 1.6 0 0 0 3 0"/></svg></div>
-        <h3>Notify on hogs</h3>
-        <p>On by default. On the same streak that trips Auto-tame, ProcessX asks instead of acting alone: a macOS notification names the app with <strong>Slow Down</strong> and <strong>Cap</strong> buttons right on the banner, and spells out the tradeoff — Slow Down is gentle and always reversible; Cap is the stronger hard ceiling, which can interrupt a live connection while the app is paused. Either button acts immediately, no window or popover needed.</p>
-      </div>
-      <div class="feat">
-        <div class="ib"><svg class="icon" viewBox="0 0 24 24"><path d="M4 17a9 9 0 1 1 16 0"/><path d="m12 15 3.5-4.5"/><circle cx="12" cy="17" r="1.1"/></svg></div>
-        <h3>Hard CPU cap, opt-in</h3>
-        <p>When you need an actual number rather than a nudge: <em>cap at 25% of a core</em> holds an app's whole process group there. This is the one action that <strong>suspends</strong> — macOS offers no CPU quota, so a cap has to stop and resume the app on a duty cycle. Off by default, never the app you're using, never media or call apps, paused while you bring it to the front (and back on when you switch away), and it lets go of everything even if ProcessX is force-quit mid-cycle.</p>
-      </div>
-      <div class="feat">
         <div class="ib"><svg class="icon" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M8 9h8M8 13h5"/></svg></div>
         <h3>Grouped like Activity Monitor</h3>
         <p>Chrome and its sixty helpers are one row, not sixty. And a terminal-hosted CLI session — an AI coding agent, a build, a dev server — surfaces as its own top-level row instead of hiding inside “Terminal”.</p>
-      </div>
-      <div class="feat">
-        <div class="ib"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3.5 9h17M3.5 15h17M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg></div>
-        <h3>Real browser tabs</h3>
-        <p>Expand a browser and the native app asks it over Apple Events for its <strong>actual open tabs by name</strong> — Chrome, Brave, Edge, Vivaldi, Opera and Safari. Slow the one runaway tab, jump to it, leave the rest alone.</p>
-        <p style="margin-top:10px">Underneath, every <strong>renderer process</strong> is listed with live CPU and memory — page renderers apart from <em>extension</em> processes, which serve no tab at all — and the ones the browser has <em>parked</em> in the background band are marked. Parked means idle; not parked doesn't mean on screen, because Chrome demotes a hidden tab's renderer lazily. macOS never says which tab a renderer belongs to — so ProcessX shows you both halves rather than inventing the join.</p>
       </div>
       <div class="feat">
         <div class="ib"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 3 8.4 7 10 4-1.6 7-5.6 7-10V6l-7-3z"/><path d="m9.2 11.8 2 2 3.6-3.8"/></svg></div>
@@ -564,6 +569,22 @@
         <div class="ib"><svg class="icon" viewBox="0 0 24 24"><path d="M22 12h-4l-3 8L9 4l-3 8H2"/></svg></div>
         <h3>Zero-subprocess sampling</h3>
         <p>The native build reads <span class="mono">proc_pidinfo</span>, <span class="mono">host_statistics64</span> and IOKit directly — <strong>no subprocesses at all</strong>, every two seconds. A monitor that costs measurable CPU is a contradiction.</p>
+      </div>
+      <div class="feat">
+        <div class="ib"><svg class="icon" viewBox="0 0 24 24"><path d="M6 17h12M7 17v-5a5 5 0 0 1 10 0v5"/><path d="M10.5 20a1.6 1.6 0 0 0 3 0"/></svg></div>
+        <h3>Notify on hogs</h3>
+        <p>On by default. On the same streak that trips Auto-tame, ProcessX asks instead of acting alone: a macOS notification names the app with <strong>Slow Down</strong> and <strong>Cap</strong> buttons right on the banner, and spells out the tradeoff — Slow Down is gentle and always reversible; Cap is the stronger hard ceiling, which can interrupt a live connection while the app is paused. Either button acts immediately, no window or popover needed.</p>
+      </div>
+      <div class="feat">
+        <div class="ib"><svg class="icon" viewBox="0 0 24 24"><path d="M4 17a9 9 0 1 1 16 0"/><path d="m12 15 3.5-4.5"/><circle cx="12" cy="17" r="1.1"/></svg></div>
+        <h3>Hard CPU cap, opt-in</h3>
+        <p>When you need an actual number rather than a nudge: <em>cap at 25% of a core</em> holds an app's whole process group there. This is the one action that <strong>suspends</strong> — macOS offers no CPU quota, so a cap has to stop and resume the app on a duty cycle. Off by default, never the app you're using, never media or call apps, paused while you bring it to the front (and back on when you switch away), and it lets go of everything even if ProcessX is force-quit mid-cycle.</p>
+      </div>
+      <div class="feat">
+        <div class="ib"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3.5 9h17M3.5 15h17M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg></div>
+        <h3>Real browser tabs</h3>
+        <p>Expand a browser and the native app asks it over Apple Events for its <strong>actual open tabs by name</strong> — Chrome, Brave, Edge, Vivaldi, Opera and Safari. Slow the one runaway tab, jump to it, leave the rest alone.</p>
+        <p style="margin-top:10px">Underneath, every <strong>renderer process</strong> is listed with live CPU and memory — page renderers apart from <em>extension</em> processes, which serve no tab at all — and the ones the browser has <em>parked</em> in the background band are marked. Parked means idle; not parked doesn't mean on screen, because Chrome demotes a hidden tab's renderer lazily. macOS never says which tab a renderer belongs to — so ProcessX shows you both halves rather than inventing the join.</p>
       </div>
     </div>
   </div>
@@ -581,15 +602,15 @@
       <div class="card good">
         <div class="tag">Recommended</div>
         <h3><svg class="icon" viewBox="0 0 24 24"><path d="M22 12h-4l-3 8L9 4l-3 8H2"/></svg> Native Swift menu bar</h3>
-        <p>Live CPU in the menu bar; click for the full list. Reads the kernel directly — <strong>zero subprocesses</strong>, no HTTP server, no attack surface, no dependencies. Throttle state comes from the kernel's own <span class="mono">pti_priority</span>, so it can even detect when something else lifts a throttle you set.</p>
-        <div class="codeblock" style="margin-top:20px;max-width:none">cd swift <span class="c">&amp;&amp;</span> ./bundle.sh
+        <p style="margin-bottom:20px">Live CPU in the menu bar; click for the full list. Reads the kernel directly — <strong>zero subprocesses</strong>, no HTTP server, no attack surface, no dependencies. Throttle state comes from the kernel's own <span class="mono">pti_priority</span>, so it can even detect when something else lifts a throttle you set.</p>
+        <div class="codeblock" style="max-width:none">cd swift <span class="c">&amp;&amp;</span> ./bundle.sh
 cp -R build/ProcessX.app /Applications/</div>
       </div>
       <div class="card">
         <div class="tag">Also included</div>
         <h3><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01"/></svg> Zero-dependency web app</h3>
-        <p>A single Node file with <strong>no npm dependencies</strong>, serving a local dashboard on <span class="mono">127.0.0.1:4747</span>. Handy on machines you don't want to build Swift on, and the reason the security model below exists.</p>
-        <div class="codeblock" style="margin-top:20px;max-width:none">node server.js   <span class="c"># → http://localhost:4747</span>
+        <p style="margin-bottom:20px">A single Node file with <strong>no npm dependencies</strong>, serving a local dashboard on <span class="mono">127.0.0.1:4747</span>. Handy on machines you don't want to build Swift on, and the reason the security model below exists.</p>
+        <div class="codeblock" style="max-width:none">node server.js   <span class="c"># → http://localhost:4747</span>
 npm test         <span class="c"># 179 checks</span></div>
       </div>
     </div>
@@ -620,7 +641,7 @@ npm test         <span class="c"># 179 checks</span></div>
       <span class="krow"><kbd>Q</kbd> QuickFast</span>
       <span class="krow"><kbd>R</kbd> restore all</span>
       <span class="krow"><kbd>/</kbd> filter</span>
-      <span class="krow">Auto-tame <strong>off</strong> by default</span>
+      <span class="krow"><span>Auto-tame <strong>off</strong> by default</span></span>
       <span class="krow">Throttles survive a restart</span>
     </div>
   </div>
@@ -636,7 +657,7 @@ npm test         <span class="c"># 179 checks</span></div>
     </div>
     <div class="stats">
       <div class="stat"><div class="n">179</div><div class="l">checks in the web harness</div><div class="s">security, contract, fuzz, a11y, e2e</div></div>
-      <div class="stat"><div class="n">30</div><div class="l">checks in the Swift self-test</div><div class="s">real syscalls, real child process</div></div>
+      <div class="stat"><div class="n">148</div><div class="l">checks in the Swift self-test</div><div class="s">real syscalls, real child process</div></div>
       <div class="stat"><div class="n">0<small> deps</small></div><div class="l">npm packages</div><div class="s">and zero Swift packages</div></div>
       <div class="stat"><div class="n">0<small>/sample</small></div><div class="l">subprocesses, native build</div><div class="s">down from ~8 every 2 s</div></div>
     </div>
@@ -811,7 +832,7 @@ npm test         <span class="c"># 179 checks</span></div>
       <div class="codeblock" style="margin-top:16px">git clone <span class="p">https://github.com/avantigroupai/ProcessX.git</span>
 cd ProcessX/swift <span class="c">&amp;&amp;</span> ./bundle.sh
 cp -R build/ProcessX.app /Applications/
-swift run -c release ProcessX --selftest   <span class="c"># 68 real-syscall checks</span></div>
+swift run -c release ProcessX --selftest   <span class="c"># 148 real-syscall checks</span></div>
       <h3 style="margin-top:32px">Local web app</h3>
       <p>Node 18 or later. No npm install step — there are no dependencies to install.</p>
       <div class="codeblock" style="margin-top:16px">cd ProcessX
