@@ -1,8 +1,6 @@
 # ProcessX — website
 
-Landing page for **ProcessX**, the free, open-source macOS process and priority
-monitor that moves CPU hogs into the macOS background band with one click —
-reversibly, without admin rights.
+Landing page for **ProcessX**, the free, open-source **macOS process explorer and priority monitor** that moves CPU hogs into the macOS background band with one click — reversibly, without admin rights.
 
 - **Live site:** https://avantigroupai.github.io/processx-web/
 - **App source:** https://github.com/avantigroupai/ProcessX

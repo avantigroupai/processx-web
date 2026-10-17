@@ -13,15 +13,20 @@
 
   gtag('config', 'G-XST1TY4JVD');
 </script>
-<title>ProcessX — macOS process monitor that makes a busy Mac responsive again (free, open source)</title>
-<meta name="description" content="ProcessX is a free, open-source macOS process and priority monitor. One click moves CPU hogs into the macOS background band — fully reversible — so the app you're actually using stays snappy, plus an opt-in hard CPU cap per app. A free App Tamer alternative and a real fix for a slow Mac, without admin rights.">
-<meta name="keywords" content="mac process monitor, macOS CPU hog, how to fix a slow Mac, limit CPU usage macOS, throttle process mac, taskpolicy macOS, macOS background band, Activity Monitor alternative, App Tamer alternative, iStat Menus alternative, mac menu bar CPU monitor, renice mac, deprioritize process macOS, stop Chrome using CPU mac, open source mac process manager">
+<title>ProcessX — macOS Process Explorer &amp; Priority Monitor · Tame CPU Hogs (Claude Code, Cursor, Chrome)</title>
+<meta name="description" content="ProcessX is a free, open-source macOS process explorer and priority monitor. Inspect live CPU, GPU and memory per app or browser tab, fix runaway Claude Code, Cursor or Codex CPU hogs, and move background hogs into the macOS background band with one reversible click — no admin rights.">
+<meta name="keywords" content="ProcessX, processx macos, macOS process explorer, mac process explorer, Process Explorer for Mac, mac task manager, mac process monitor, Claude Code using all the CPU, Cursor using all the CPU, Codex using all the CPU, bad Claude Code session file, macOS CPU hog, how to fix a slow Mac, limit CPU usage macOS, throttle process mac, taskpolicy macOS, macOS background band, Activity Monitor alternative, App Tamer alternative, iStat Menus alternative, mac menu bar CPU monitor, renice mac, deprioritize process macOS, stop Chrome using CPU mac, open source mac process manager">
 <link rel="canonical" href="https://avantigroupai.github.io/processx-web/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="ProcessX — macOS process &amp; priority monitor">
-<meta property="og:description" content="Free, open-source macOS process monitor. One click pushes CPU hogs into the background band — reversible, no admin rights — and your Mac is responsive again.">
+<meta property="og:site_name" content="ProcessX">
+<meta property="og:title" content="ProcessX — macOS Process Explorer &amp; Priority Monitor">
+<meta property="og:description" content="Free, open-source macOS process explorer and priority monitor. Inspect live CPU, GPU and memory, diagnose Claude Code / Cursor / Codex CPU burn, and move background hogs into the macOS background band with one reversible click.">
 <meta property="og:url" content="https://avantigroupai.github.io/processx-web/">
+<meta property="og:image" content="https://avantigroupai.github.io/processx-web/img/processx-1.2.4.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ProcessX — macOS Process Explorer &amp; Priority Monitor">
+<meta name="twitter:description" content="Free, open-source macOS process explorer and priority monitor. Move CPU hogs into the macOS background band with one reversible click — no admin rights.">
+<meta name="twitter:image" content="https://avantigroupai.github.io/processx-web/img/processx-1.2.4.jpg">
 <link rel="alternate" type="text/plain" href="/processx-web/llms.txt" title="LLM-readable summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233987e5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 12h-4l-3 8L9 4l-3 8H2'/%3E%3C/svg%3E">
 <script type="application/ld+json">
@@ -32,30 +37,33 @@
       "@type": "SoftwareApplication",
       "@id": "https://avantigroupai.github.io/processx-web/#app",
       "name": "ProcessX",
-      "alternateName": ["ProcessX for Mac", "ProcessX process monitor"],
+      "alternateName": ["ProcessX for Mac", "ProcessX macOS Process Explorer", "ProcessX process monitor", "ProcessX Mac task manager"],
       "applicationCategory": "UtilitiesApplication",
-      "applicationSubCategory": "System monitor / process priority manager",
+      "applicationSubCategory": "macOS process explorer / system monitor / process priority manager",
       "operatingSystem": "macOS (native menu-bar app requires macOS 26; the local web app runs on macOS with Node 18+)",
       "processorRequirements": "Apple Silicon or Intel",
-      "description": "Free, open-source macOS process and priority monitor. Shows live CPU, GPU and memory, groups processes per app the way Activity Monitor does, and moves CPU hogs into the macOS background resource band with one click — fully reversible, no admin rights, no telemetry. Ships as a native Swift menu-bar app and as a zero-dependency local web app.",
+      "description": "Free, open-source macOS process explorer and priority monitor. Shows live CPU, GPU and memory, groups processes per app the way Activity Monitor does, expands browser tabs and renderer processes, diagnoses idle Claude Code, Cursor or Codex CPU burn, and moves CPU hogs into the macOS background resource band with one click — fully reversible, no admin rights, no telemetry. Ships as a native Swift menu-bar app and as a zero-dependency local web app.",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-      "downloadUrl": "https://github.com/avantigroupai/ProcessX/releases/download/v1.2.4/ProcessX-1.2.4-universal.dmg",
-      "installUrl": "https://github.com/avantigroupai/ProcessX/releases/tag/v1.2.4",
-      "releaseNotes": "https://github.com/avantigroupai/ProcessX/releases/tag/v1.2.4",
-      "softwareVersion": "1.2.4",
+      "downloadUrl": "https://github.com/avantigroupai/ProcessX/releases/download/v1.2.5/ProcessX-1.2.5-universal.dmg",
+      "installUrl": "https://github.com/avantigroupai/ProcessX/releases/tag/v1.2.5",
+      "releaseNotes": "https://github.com/avantigroupai/ProcessX/releases/tag/v1.2.5",
+      "screenshot": "https://avantigroupai.github.io/processx-web/img/processx-1.2.4.jpg",
+      "softwareVersion": "1.2.5",
       "datePublished": "2026-09-18",
+      "dateModified": "2026-10-17",
       "isAccessibleForFree": true,
       "license": "https://github.com/avantigroupai/ProcessX",
       "codeRepository": "https://github.com/avantigroupai/ProcessX",
       "programmingLanguage": ["Swift", "JavaScript"],
       "url": "https://avantigroupai.github.io/processx-web/",
       "featureList": [
+        "macOS process explorer and priority monitor with live CPU, per-process IOKit GPU, memory pressure and swap",
         "QuickFast: one click moves background CPU hogs into the macOS low-priority band",
         "Fully reversible throttling via the background resource band instead of renice",
         "Auto-tame watchdog moves sustained background hogs down automatically and restores them on focus",
         "Per-process GPU column read from IOKit without admin rights, and clickable CPU, GPU, Memory and Slowed down cards that sort or filter the table",
         "Notify on hogs sends a macOS notification with Cap and Slow Down action buttons when a background app stays hot, on by default",
-        "Opt-in hard CPU cap holds a chosen app under a set percentage by suspending and resuming it, off by default and released the moment the app comes to the front",
+        "Opt-in hard CPU cap holds a chosen app under a set percentage by suspending and resuming it, off by default and paused while the app is in front",
         "Processes grouped per app the way Activity Monitor groups them, with CLI sessions surfaced separately",
         "Browser rows expand to real open tabs by name so a single heavy tab can be slowed",
         "The same row lists every renderer process with live CPU and memory, page renderers separated from extension processes, and marks the ones the browser has parked in the background band, so a hot renderer is easy to spot",
@@ -71,28 +79,33 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do I stop an app from hogging the CPU on a Mac?",
-          "acceptedAnswer": { "@type": "Answer", "text": "macOS has a background resource band: a scheduling tier where a process gets CPU, disk I/O and timer priority only when nothing in the foreground wants them. ProcessX moves a chosen process, or a whole app group, into that band with one click and lifts it back out with another. The process keeps running and keeps making progress — it simply stops competing with whatever you are actually using. No admin rights are needed because you can only affect processes you already own." }
+          "name": "Is ProcessX a macOS Process Explorer and Activity Monitor alternative?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. ProcessX is a free, open-source macOS process explorer, task manager and priority monitor. Like Activity Monitor and Process Explorer, it shows live CPU, memory and per-process GPU usage, groups helper processes under their parent app, surfaces terminal CLI sessions as top-level rows, and expands browsers to inspect open tabs and renderer processes. Unlike read-only monitors or tools that only offer Force Quit, ProcessX lets you reversibly move CPU-heavy processes into the macOS background resource band (taskpolicy -b / PRIO_DARWIN_BG) or apply an opt-in hard CPU cap." }
         },
         {
           "@type": "Question",
-          "name": "Why does my Mac get slow when Chrome or an AI assistant is running?",
-          "acceptedAnswer": { "@type": "Answer", "text": "macOS schedules by default as if every process deserves equal CPU. A build, an encode, a browser with sixty tabs or a long-running AI coding session will happily take every core it can get, and the app in front of you is left fighting for the same cores. Quitting the heavy process is destructive and pausing it stops the work. ProcessX changes its scheduling priority instead, so the work continues quietly in the background." }
+          "name": "Why is Claude Code, Cursor or Codex using all the CPU on my Mac?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Idle Claude Code at 50–60% of a core has been traced to saved_hook_context inside ~/.claude/projects/**/*.jsonl and to a session-start hook. Cursor 3 and the Codex app are separate bugs: the fans dropped when those apps quit. Fix that first. The background band does not end a wedged loop. It does keep a session that is actually working from taking the cores the window in front of you needs. ProcessX moves a chosen group into that band and puts it back. It does not repair a transcript." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I stop an app from hogging the CPU on a Mac?",
+          "acceptedAnswer": { "@type": "Answer", "text": "macOS has a background resource band: a scheduling tier where a process gets CPU, disk I/O and timers only when nothing in the foreground wants them. ProcessX moves a chosen process — or a whole app group — into that band with one click, and lifts it back out with another. The process keeps running and keeps making progress. It simply stops competing with whatever you're actually using. No admin rights are needed, because you can only affect processes you already own." }
         },
         {
           "@type": "Question",
           "name": "Is ProcessX a free alternative to App Tamer?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. App Tamer is a well-regarded paid macOS utility that slows CPU-hungry apps by repeatedly stopping and resuming them. ProcessX is free and open source and defaults to a different approach: it moves processes into the macOS background resource band and lets the kernel scheduler do the work, so the process is never suspended and the change is a single reversible call. The native app also offers an opt-in hard CPU cap, which does use the stop-and-resume technique, off by default and never applied to the app you are using, to system processes or to media and call apps." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. App Tamer is a mature paid utility that holds an app under a CPU cap by repeatedly stopping and resuming it. ProcessX is free and open source, and its default action suspends nothing: it changes the scheduling band and lets the kernel decide, so a throttled process still runs at full speed whenever your foreground is idle. The native app also has a hard percentage cap, which necessarily works the same way App Tamer's does — it repeatedly suspends and resumes the app. It is off by default, set per app from a menu, never applied to the app you're using, to system processes or to media and call apps, and paused while that app is in front — then resumed on its own when you switch away. A cap from 1.2.5 no longer disappears on a Cmd-Tab. A suspended app can't respond while it's stopped, so reach for \"Slow down\" first and the cap only when you need a specific number." }
         },
         {
           "@type": "Question",
-          "name": "Why does ProcessX use taskpolicy instead of renice?",
-          "acceptedAnswer": { "@type": "Answer", "text": "A nice value can be raised without privileges but never lowered back again without root, so renice is a one-way door: you can slow a process down and then cannot undo it. The macOS background band, set with taskpolicy -b or setpriority with PRIO_DARWIN_BG, is fully reversible by the same unprivileged user, and it throttles disk I/O and timer coalescing as well as CPU. That reversibility is the whole reason ProcessX uses it." }
+          "name": "Why not just use renice?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Because it's a one-way door. An unprivileged user can raise a nice value but can never lower it back without root — so you could slow a process down and then be unable to undo it. The background band (taskpolicy -b, or setpriority with PRIO_DARWIN_BG) is symmetric for the same user, and it throttles disk I/O and timer coalescing as well as CPU. That reversibility is the entire reason ProcessX is built on it." }
         },
         {
           "@type": "Question",
-          "name": "Does ProcessX need admin rights or a kernel extension?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. There is no installer, no kernel extension, no background daemon and no password prompt. ProcessX only changes the scheduling priority of processes owned by the user running it — exactly what that user could already do from a terminal." }
+          "name": "Does ProcessX need admin rights, an installer or a kernel extension?",
+          "acceptedAnswer": { "@type": "Answer", "text": "None of the three. No password prompt, no daemon, no kext. It only changes the priority of processes owned by the user running it — exactly what that user could already do from a terminal." }
         },
         {
           "@type": "Question",
@@ -101,18 +114,23 @@
         },
         {
           "@type": "Question",
-          "name": "Can ProcessX slow down a single browser tab?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Expanding a browser row lists its renderer processes, and in the native app scriptable browsers — Chrome and its Chromium siblings plus Safari — are asked over Apple Events for their real open tabs by name. One runaway tab can be pushed into the background band without touching the rest of the browser." }
+          "name": "Can I slow down a single browser tab?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Expanding a browser row lists its renderer processes, and in the native app scriptable browsers — Chrome and its Chromium siblings, plus Safari — are asked over Apple Events for their real open tabs by name, with a Jump button to switch to one. macOS will ask your permission the first time. Non-scriptable browsers such as Firefox still expand to renderer PIDs." }
         },
         {
           "@type": "Question",
-          "name": "What does ProcessX refuse to touch?",
-          "acceptedAnswer": { "@type": "Answer", "text": "The frontmost application, including a command-line tool running in the frontmost terminal; protected system processes such as WindowServer, Finder and coreaudiod; media and call applications such as Music, Spotify, Zoom, Teams and FaceTime; processes owned by other users; and ProcessX itself. Every automatic action is listed and can be undone with a single Restore all." }
+          "name": "What will ProcessX never touch?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The frontmost application, including a command-line tool running in the frontmost terminal; protected system processes such as WindowServer, Finder and coreaudiod; media and call apps such as Music, Spotify, Zoom, Teams and FaceTime; processes owned by other users; and itself. Auto-tame is off by default, and everything QuickFast does is listed and undoable in one click." }
         },
         {
           "@type": "Question",
           "name": "Does ProcessX send my data anywhere?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. There is no telemetry, no account and no network call. The native menu-bar app reads process information straight from the kernel. The optional local web app binds to 127.0.0.1 only and is hardened against cross-site requests and DNS rebinding so no web page can read your process list or throttle anything." }
+          "acceptedAnswer": { "@type": "Answer", "text": "No. No telemetry, no account, no network calls. The native app reads process information straight from the kernel. The optional local web app binds to 127.0.0.1 only. Every /api/ route validates the Host header, and every state-changing request is gated by an Origin / Sec-Fetch-Site / content-type check, so no web page — not even one pointing its own domain at loopback — can read your process list or throttle anything." }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the requirements?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The native menu-bar app targets macOS 26 and is built with a Swift 6.2 toolchain. The local web app needs only Node 18 or later and runs on any recent macOS. Both are universal across Apple Silicon and Intel; the CPU accounting is explicitly mach-timebase corrected, so Apple Silicon reports true percentages." }
         }
       ]
     }
@@ -214,7 +232,7 @@
   .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
   h1 {
     font-size: clamp(38px, 6vw, 66px); line-height: 1.04; letter-spacing: -0.03em; font-weight: 680;
-    max-width: 17ch; margin-bottom: 26px;
+    max-width: 22ch; margin-bottom: 26px;
   }
   h1 .muted { color: var(--ink-3); }
   .lede { font-size: clamp(17px, 2.1vw, 21px); color: var(--ink-2); max-width: 58ch; margin-bottom: 36px; }
@@ -227,6 +245,7 @@
   /* ---------- App mockup ---------- */
   .shot { margin-top: 64px; }
   .shot-img { display: block; width: 100%; height: auto; }
+  .shot-cap { margin: 14px 0 0; font-size: 13.5px; line-height: 1.4; color: var(--ink-3); text-align: center; }
   .window {
     border-radius: 14px; overflow: hidden; border: 1px solid var(--line-strong);
     background: var(--bg-2);
@@ -381,12 +400,13 @@
       ProcessX
     </a>
     <div class="nav-links">
+      <a href="#agents">Agents</a>
       <a href="#features">Features</a>
       <a href="#safety">Safety</a>
       <a href="#alternatives">Alternatives</a>
       <a href="#faq">FAQ</a>
       <a href="contact/">Contact</a>
-      <a class="btn btn-primary" href="https://github.com/avantigroupai/ProcessX/releases/download/v1.2.4/ProcessX-1.2.4-universal.dmg">Download</a>
+      <a class="btn btn-primary" href="https://github.com/avantigroupai/ProcessX/releases/download/v1.2.5/ProcessX-1.2.5-universal.dmg">Download</a>
     </div>
   </div>
 </nav>
@@ -394,13 +414,13 @@
 <a id="top"></a>
 <header class="hero">
   <div class="wrap">
-    <span class="eyebrow"><span class="dot"></span> macOS · Swift menu bar · zero dependencies</span>
-    <h1>Your Mac isn't slow. <span class="muted">It's just badly scheduled.</span></h1>
-    <p class="lede">Some background process — a build, an encode, sixty browser tabs, a long-running AI coding session — is taking every core it can get, and the app in front of you is fighting it for CPU. ProcessX moves the hog into the macOS <strong>background band</strong> with one click. It keeps running. You get your Mac back. <strong>Fully reversible</strong>, no admin rights.</p>
+    <span class="eyebrow"><span class="dot"></span> ProcessX · macOS process explorer &amp; priority monitor · Swift menu bar</span>
+    <h1>Claude Code, Cursor or Codex is using all your CPU. <span class="muted">Fix the session first.</span></h1>
+    <p class="lede"><strong>ProcessX</strong> is a free, open-source <strong>macOS process explorer and priority monitor</strong>. Idle Claude Code at half a core has a file-and-hook cause; Cursor and Codex spinning their fans are separate bugs. Fix that first. If the work is real, the <strong>background band</strong> is what keeps the window you're typing in responsive.</p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="https://github.com/avantigroupai/ProcessX/releases/download/v1.2.4/ProcessX-1.2.4-universal.dmg">
+      <a class="btn btn-primary" href="https://github.com/avantigroupai/ProcessX/releases/download/v1.2.5/ProcessX-1.2.5-universal.dmg">
         <svg class="icon" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
-        Download 1.2.4
+        Download 1.2.5
       </a>
       <a class="btn btn-ghost" href="#how">
         <svg class="icon" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M9 18l6-6-6-6"/></svg>
@@ -417,11 +437,52 @@
     <div class="shot">
       <picture>
         <source type="image/webp" srcset="img/processx-1.2.4-1x.webp 1274w, img/processx-1.2.4.webp 2548w" sizes="(min-width: 1180px) 1140px, 100vw">
-        <img class="window shot-img" src="img/processx-1.2.4.jpg" width="1274" height="1040" fetchpriority="high" decoding="async" alt="ProcessX 1.2.4: CPU, GPU, memory and slowed-down gauge cards above a table of running apps grouped per app, with CPU, memory, per-process GPU and priority columns and Cap, Slow down and Quit actions on each row.">
+        <img class="window shot-img" src="img/processx-1.2.4.jpg" width="1274" height="1040" fetchpriority="high" decoding="async" alt="ProcessX macOS process explorer and priority monitor: CPU, GPU, memory and slowed-down gauge cards above a table of running apps grouped per app, with CPU, memory, per-process GPU and priority columns and Cap, Slow down and Quit actions on each row.">
       </picture>
+      <p class="shot-cap">The picture is a 1.2.4 capture. The download is 1.2.5.</p>
     </div>
   </div>
 </header>
+
+<!-- Agent CPU: non-product cause first, background band second. Not published. -->
+<section id="agents">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Before you throttle anything</div>
+      <h2>Claude Code, Cursor or Codex is using all your CPU.</h2>
+      <p>Idle Claude Code at half a core has a file-and-hook cause. Cursor and Codex spinning their fans are separate bugs in those apps. Fix that first. The background band is the second lever, for when the work is real and the window in front of you still has to stay typed-into.</p>
+    </div>
+    <div class="grid">
+      <div class="feat">
+        <div class="ib"><svg class="icon" viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg></div>
+        <h3>Claude Code, idle at 50–60%</h3>
+        <p>On 1 February 2026 an M4 Mac mini (16&nbsp;GB) was running two Claude Code sessions that were only waiting for input. Activity Monitor showed them at 62% and 52% CPU, and VS Code lagged while the owner typed. Two or three sessions pushed Claude's total past 100% CPU. <a href="https://www.reddit.com/r/ClaudeAI/comments/1qt1f5y/does_anyone_face_high_cpu_usage_when_using_claude/">The thread</a> is the report.</p>
+        <p style="margin-top:10px">The replies traced it to session files, not to a busy model. A session-start hook — the one named there is the superpowers skill — writes <span class="mono">saved_hook_context</span> into <span class="mono">~/.claude/projects/**/*.jsonl</span>. <a href="https://github.com/anthropics/claude-code/issues/22245">Claude Code issue 22245</a> shows the failure mode: the same UUID stored twice, with different parents, so the loader walks a cycle and sits at 100% CPU until that file is gone. <a href="https://github.com/anthropics/claude-code/issues/29953">Issue 29953</a>, on macOS 26.3, is the same shape from the claude-mem SessionStart hook: a 67&nbsp;KB transcript with eight of those entries sits at 100% CPU on the next launch, and an empty session directory does not. People on the thread cleared the idle burn by turning that hook off, and by removing the jsonl it had already written.</p>
+        <div class="codeblock" style="margin-top:14px;max-width:none">find ~/.claude/projects -name "*.jsonl" -exec grep -l "saved_hook_context" {} \;</div>
+        <p style="margin-top:10px">That command only lists files. Deleting one throws away that session's transcript. Issue 22245's narrower workaround is to remove orphaned jsonl files in that folder that <span class="mono">sessions-index.json</span> no longer names, because each frozen launch writes another.</p>
+      </div>
+      <div class="feat">
+        <div class="ib"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v12H4z"/><path d="M8 20h8M12 16v4"/></svg></div>
+        <h3>Cursor 3, fans after the project is closed</h3>
+        <p>On 7 April 2026 a paying Cursor user on an M1 Pro MacBook said version 3 made the fans scream, which older Cursor and VS Code on the same machine had not. <a href="https://www.reddit.com/r/cursor/comments/1sf89ao/cursor_3_is_turning_my_macbook_m1_pro_into_a_jet/">The thread</a>: the fans stayed up after the project itself was closed, and settled only when Cursor quit. One person measured Cursor holding a steady 20–30% after a fresh reboot and a fresh launch.</p>
+        <p style="margin-top:10px">There is no Claude session file to clean up. It is a Cursor 3 problem to report to Cursor. Quitting the app is what stopped the fans.</p>
+      </div>
+      <div class="feat">
+        <div class="ib"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <h3>Codex, fans on a new chat</h3>
+        <p>On 17 March 2026 an M3 Max (36&nbsp;GB) spun its fans almost every time the Codex app was used, including a brand-new chat with no sub-agents. <a href="https://www.reddit.com/r/codex/comments/1rw796p/codex_app_is_making_my_macs_fans_spin_up_hard/">Their Activity Monitor sample</a>: Codex Helper about 32% CPU and 18% GPU, WindowServer about 45% CPU, kernel_task about 26%. <a href="https://github.com/openai/codex/issues/18467">Codex issue 18467</a> is the same class of report — the Codex process near 276% CPU on a small request, fans up, the Mac lagging, and the load gone after quit.</p>
+        <p style="margin-top:10px">That is the Codex desktop app, not a corrupt Claude transcript. Report it upstream. Quitting Codex is what brought CPU back down.</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:28px">
+      <div class="tag">Only after the cause is real work</div>
+      <h3><svg class="icon" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2z"/></svg> Then the background band</h3>
+      <p>Moving a wedged Claude session into the background does not end the loop. The core stays busy. It only stops winning fights with the app in front of you, which is why the file and the hook come first.</p>
+      <p>When the agent is genuinely working, and you still need the editor to stay responsive, macOS already has a background resource band. A process there keeps running — CPU, disk and timers included — but it receives them only when nothing in the foreground wants them. <span class="mono">taskpolicy -b -p &lt;pid&gt;</span> moves one process in, and the same user can move it back. <span class="mono">renice</span> cannot: an unprivileged nice value does not come back down.</p>
+      <p>ProcessX is the menu-bar button for that, on a whole app group rather than one pid, and Restore puts the group back. It will not touch the frontmost app, including a CLI in the frontmost terminal. The native app requires macOS 26. It does not repair a transcript. <a href="#how">How the band works</a>.</p>
+    </div>
+  </div>
+</section>
 
 <!-- Problem / solution -->
 <section id="how">
@@ -429,7 +490,7 @@
     <div class="sec-head">
       <div class="kicker">The idea</div>
       <h2>Don't kill it. Don't pause it. Just move it out of the way.</h2>
-      <p>macOS already has the right mechanism built in — a background resource band where a process gets CPU, disk I/O and timers only when nothing in the foreground wants them. Almost nothing exposes it. ProcessX makes it a button.</p>
+      <p>macOS already has the right mechanism built in — a background resource band where a process gets CPU, disk I/O and timers only when nothing in the foreground wants them. Almost nothing exposes it. ProcessX is the macOS process explorer that makes it a button.</p>
     </div>
     <div class="split">
       <div class="card bad">
@@ -480,7 +541,7 @@
       <div class="feat">
         <div class="ib"><svg class="icon" viewBox="0 0 24 24"><path d="M4 17a9 9 0 1 1 16 0"/><path d="m12 15 3.5-4.5"/><circle cx="12" cy="17" r="1.1"/></svg></div>
         <h3>Hard CPU cap, opt-in</h3>
-        <p>When you need an actual number rather than a nudge: <em>cap at 25% of a core</em> holds an app's whole process group there. This is the one action that <strong>suspends</strong> — macOS offers no CPU quota, so a cap has to stop and resume the app on a duty cycle. Off by default, never the app you're using, never media or call apps, released the instant you bring it to the front, and it lets go of everything even if ProcessX is force-quit mid-cycle.</p>
+        <p>When you need an actual number rather than a nudge: <em>cap at 25% of a core</em> holds an app's whole process group there. This is the one action that <strong>suspends</strong> — macOS offers no CPU quota, so a cap has to stop and resume the app on a duty cycle. Off by default, never the app you're using, never media or call apps, paused while you bring it to the front (and back on when you switch away), and it lets go of everything even if ProcessX is force-quit mid-cycle.</p>
       </div>
       <div class="feat">
         <div class="ib"><svg class="icon" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M8 9h8M8 13h5"/></svg></div>
@@ -550,7 +611,7 @@ npm test         <span class="c"># 179 checks</span></div>
       </div>
       <div class="card">
         <h3><svg class="icon" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 3 8.4 7 10 4-1.6 7-5.6 7-10V6l-7-3z"/></svg> The web app is locked down</h3>
-        <p>A server on loopback is still reachable from any page in your browser. So every state-changing request is gated by an <span class="mono">Origin</span> / <span class="mono">Sec-Fetch-Site</span> / content-type check, and <em>every</em> route validates the <span class="mono">Host</span> header — which is what stops a DNS-rebinding page from reading your process list.</p>
+        <p>A server on loopback is still reachable from any page in your browser. So every state-changing request is gated by an <span class="mono">Origin</span> / <span class="mono">Sec-Fetch-Site</span> / content-type check, and every <span class="mono">/api/</span> route validates the <span class="mono">Host</span> header — which is what stops a DNS-rebinding page from reading your process list.</p>
         <p>Rate-limited writes, capped PID lists, no raw OS stderr in responses, CSP and <span class="mono">nosniff</span> on static files. There is deliberately no login: ProcessX can only do what you could already do from a terminal.</p>
       </div>
     </div>
@@ -586,8 +647,8 @@ npm test         <span class="c"># 179 checks</span></div>
   <div class="wrap">
     <div class="sec-head">
       <div class="kicker">Comparison</div>
-      <h2>How ProcessX compares to other Mac process tools.</h2>
-      <p>If you're weighing Activity Monitor, App Tamer, iStat Menus, Stats or just living in <span class="mono">htop</span> — here's an honest summary, including where the others are genuinely better.</p>
+      <h2>How ProcessX compares to Activity Monitor, Process Explorer and other Mac process tools.</h2>
+      <p>If you're weighing Activity Monitor, App Tamer, a macOS Process Explorer, iStat Menus, Stats or just living in <span class="mono">htop</span> — here's an honest summary, including where the others are genuinely better.</p>
     </div>
     <div class="tablewrap">
       <table class="cmp">
@@ -597,7 +658,7 @@ npm test         <span class="c"># 179 checks</span></div>
         <tbody>
           <tr class="me">
             <td><strong>ProcessX</strong></td><td>Free, open source</td>
-            <td>Moves processes into the macOS background resource band, reversibly — plus an opt-in hard CPU cap</td>
+            <td>macOS process explorer &amp; priority manager that moves processes into the background resource band, reversibly — plus an opt-in hard CPU cap</td>
             <td>Nothing is ever killed, and by default nothing is suspended either; one-click QuickFast for the whole system; an opt-in watchdog; an opt-in per-app percentage cap that is off by default; hard no-touch list for foreground, system and media apps</td>
           </tr>
           <tr>
@@ -605,8 +666,12 @@ npm test         <span class="c"># 179 checks</span></div>
             <td>Excellent at diagnosis, and it has energy, disk and network tabs ProcessX doesn't. Its only intervention is Force Quit — ProcessX adds the reversible middle ground</td>
           </tr>
           <tr>
-            <td>App Tamer</td><td>~$15 one-time</td><td>Stops and resumes CPU-hungry apps to hold them under a set percentage</td>
-            <td>App Tamer is mature and polished, and capping is what it is built around. ProcessX is free and open source, and its default action suspends nothing — it hands the decision to the kernel scheduler, so throttled work still runs flat out whenever the foreground is idle. ProcessX does now offer a hard cap using the same stop-and-resume technique, but as an opt-in that is off by default</td>
+            <td>App Tamer</td><td>$14.95 one-time, also on Setapp</td><td>Stops and resumes CPU-hungry apps to hold them under a set percentage, and can pin an app to efficiency cores</td>
+            <td>App Tamer is the paid incumbent: a 15-day trial, macOS 10.13 through current, and efficiency-core pinning, which ProcessX cannot do. ProcessX is free, requires macOS 26, and its default action suspends nothing — the kernel keeps the work moving whenever the foreground is idle. The hard cap is opt-in and uses the same stop-and-resume idea</td>
+          </tr>
+          <tr>
+            <td>OpenTamer</td><td>Free, open source</td><td>Menu-bar utility that lowers nice, duty-cycle caps CPU, or pauses an app in the background</td>
+            <td>The closest free cousin. Its lower-priority action is <span class="mono">renice</span> to 20, which an unprivileged user cannot undo. ProcessX uses the background resource band, which is reversible, and groups helper processes per app</td>
           </tr>
           <tr>
             <td>iStat Menus</td><td>Paid</td><td>The best-in-class menu-bar system monitor</td>
@@ -631,7 +696,7 @@ npm test         <span class="c"># 179 checks</span></div>
         </tbody>
       </table>
     </div>
-    <p class="seo-note">People find ProcessX searching for: mac process monitor · why is my Mac so slow · how to fix a slow MacBook · limit CPU usage macOS · throttle a process on Mac · stop Chrome using so much CPU · macOS background band · <span class="mono">taskpolicy</span> · <span class="mono">renice</span> on Mac · deprioritize a process macOS · Activity Monitor alternative · free App Tamer alternative · iStat Menus alternative · mac menu bar CPU monitor · open source macOS process manager.</p>
+    <p class="seo-note">People find ProcessX searching for: ProcessX macOS · macOS process explorer · Process Explorer for Mac · Mac task manager · Claude Code using all the CPU · Cursor using all the CPU · Codex using all the CPU · bad Claude Code session file · mac process monitor · why is my Mac so slow · how to fix a slow MacBook · limit CPU usage macOS · throttle a process on Mac · stop Chrome using so much CPU · macOS background band · <span class="mono">taskpolicy</span> · <span class="mono">renice</span> on Mac · deprioritize a process macOS · Activity Monitor alternative · free App Tamer alternative · iStat Menus alternative · mac menu bar CPU monitor · open source macOS process manager.</p>
   </div>
 </section>
 
@@ -676,17 +741,21 @@ npm test         <span class="c"># 179 checks</span></div>
     </div>
     <div class="faq">
       <details open>
+        <summary>Is ProcessX a macOS Process Explorer and Activity Monitor alternative?</summary>
+        <p>Yes. ProcessX is a free, open-source <strong>macOS process explorer</strong>, task manager and priority monitor. Like Activity Monitor and Process Explorer, it shows live CPU, memory and per-process GPU usage, groups helper processes under their parent app, surfaces terminal CLI sessions as top-level rows, and expands browsers to inspect open tabs and renderer processes. Unlike read-only monitors or tools that only offer Force Quit, ProcessX lets you reversibly move CPU-heavy processes into the macOS background resource band (<span class="mono">taskpolicy -b</span> / <span class="mono">PRIO_DARWIN_BG</span>) or apply an opt-in hard CPU cap.</p>
+      </details>
+      <details>
+        <summary>Why is Claude Code, Cursor or Codex using all the CPU on my Mac?</summary>
+        <p>Idle Claude Code at 50–60% of a core has been traced to <span class="mono">saved_hook_context</span> inside <span class="mono">~/.claude/projects/**/*.jsonl</span> and to a session-start hook. Cursor 3 and the Codex app are separate bugs: the fans dropped when those apps quit. Fix that first. The background band does not end a wedged loop. It does keep a session that is actually working from taking the cores the window in front of you needs. ProcessX moves a chosen group into that band and puts it back. It does not repair a transcript.</p>
+      </details>
+      <details>
         <summary>How do I stop an app from hogging the CPU on a Mac?</summary>
         <p>macOS has a <strong>background resource band</strong>: a scheduling tier where a process gets CPU, disk I/O and timers only when nothing in the foreground wants them. ProcessX moves a chosen process — or a whole app group — into that band with one click, and lifts it back out with another.</p>
         <p>The process keeps running and keeps making progress. It simply stops competing with whatever you're actually using. No admin rights are needed, because you can only affect processes you already own.</p>
       </details>
       <details>
-        <summary>Why does my Mac get slow when Chrome or an AI assistant is running?</summary>
-        <p>Because macOS schedules, by default, as though every process deserves an equal share. A build, an encode, sixty tabs or a long-running AI coding session will take every core it can get, and the window in front of you fights for the same cores. Quitting is destructive; pausing stops the work. Changing the priority is the option nobody exposes — so ProcessX exposes it.</p>
-      </details>
-      <details>
         <summary>Is ProcessX a free alternative to App Tamer?</summary>
-        <p>Yes. App Tamer is a mature paid utility that holds an app under a CPU cap by repeatedly stopping and resuming it. ProcessX is free and open source, and its default action suspends nothing: it changes the scheduling band and lets the kernel decide, so a throttled process still runs at full speed whenever your foreground is idle. The native app also has a hard percentage cap, which necessarily works the same way App Tamer's does — it repeatedly suspends and resumes the app. It is off by default, set per app from a menu, never applied to the app you're using, to system processes or to media and call apps, and released the moment you bring the app to the front. A suspended app can't respond while it's stopped, so reach for "Slow down" first and the cap only when you need a specific number.</p>
+        <p>Yes. App Tamer is a mature paid utility that holds an app under a CPU cap by repeatedly stopping and resuming it. ProcessX is free and open source, and its default action suspends nothing: it changes the scheduling band and lets the kernel decide, so a throttled process still runs at full speed whenever your foreground is idle. The native app also has a hard percentage cap, which necessarily works the same way App Tamer's does — it repeatedly suspends and resumes the app. It is off by default, set per app from a menu, never applied to the app you're using, to system processes or to media and call apps, and paused while that app is in front — then resumed on its own when you switch away. A cap from 1.2.5 no longer disappears on a Cmd-Tab. A suspended app can't respond while it's stopped, so reach for "Slow down" first and the cap only when you need a specific number.</p>
       </details>
       <details>
         <summary>Why not just use <span class="mono">renice</span>?</summary>
@@ -695,6 +764,10 @@ npm test         <span class="c"># 179 checks</span></div>
       <details>
         <summary>Does ProcessX need admin rights, an installer or a kernel extension?</summary>
         <p>None of the three. No password prompt, no daemon, no kext. It only changes the priority of processes owned by the user running it — exactly what that user could already do from a terminal.</p>
+      </details>
+      <details>
+        <summary>Can ProcessX show CPU and memory usage for each browser tab?</summary>
+        <p>Not per tab — and no macOS tool can, because the operating system does not expose the mapping. macOS reports a browser's renderer processes with their CPU and memory, and Apple Events report tab titles, but nothing joins the two: that link exists only inside the browser itself. ProcessX shows both halves honestly. Expanding a browser row lists the named tabs, then every renderer process with its real CPU and memory. Not every helper is a tab: extension processes are marked as extensions and serve no page at all — on one Chrome, 13 of 36 helpers were extensions. Page renderers the browser has parked in the low-priority band are marked background. The rest are not necessarily on screen: Chrome demotes a hidden tab's renderer lazily, so on that same Chrome 14 page renderers sat above the background band against 4 tabs actually on screen. Not parked means still scheduled normally, not visible. Chrome also shares one renderer across same-site tabs, so there are always fewer page renderers than tabs.</p>
       </details>
       <details>
         <summary>Can I slow down a single browser tab?</summary>
@@ -706,7 +779,7 @@ npm test         <span class="c"># 179 checks</span></div>
       </details>
       <details>
         <summary>Does ProcessX send my data anywhere?</summary>
-        <p>No. No telemetry, no account, no network calls. The native app reads process information straight from the kernel. The optional local web app binds to <span class="mono">127.0.0.1</span> only and validates the <span class="mono">Host</span>, <span class="mono">Origin</span> and <span class="mono">Sec-Fetch-Site</span> headers on every route, so no web page — not even one pointing its own domain at loopback — can read your process list or throttle anything.</p>
+        <p>No. No telemetry, no account, no network calls. The native app reads process information straight from the kernel. The optional local web app binds to <span class="mono">127.0.0.1</span> only. Every <span class="mono">/api/</span> route validates the <span class="mono">Host</span> header, and every state-changing request is gated by an <span class="mono">Origin</span> / <span class="mono">Sec-Fetch-Site</span> / content-type check, so no web page — not even one pointing its own domain at loopback — can read your process list or throttle anything.</p>
       </details>
       <details>
         <summary>What are the requirements?</summary>
@@ -722,9 +795,9 @@ npm test         <span class="c"># 179 checks</span></div>
     <h2>Get your Mac back.</h2>
     <p>Free and open source. No installer, no admin rights, no telemetry — and every change it makes is one click away from being undone.</p>
     <div class="cta-actions">
-      <a class="btn btn-primary" href="https://github.com/avantigroupai/ProcessX/releases/download/v1.2.4/ProcessX-1.2.4-universal.dmg">
+      <a class="btn btn-primary" href="https://github.com/avantigroupai/ProcessX/releases/download/v1.2.5/ProcessX-1.2.5-universal.dmg">
         <svg class="icon" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
-        Download ProcessX 1.2.4
+        Download ProcessX 1.2.5
       </a>
       <a class="btn btn-ghost" href="https://github.com/avantigroupai/ProcessX">Source on GitHub</a>
       <a class="btn btn-ghost" href="https://github.com/avantigroupai/ProcessX/issues">Report an issue</a>
@@ -732,7 +805,7 @@ npm test         <span class="c"># 179 checks</span></div>
 
     <div class="install">
       <h3>Native menu-bar app</h3>
-      <p><a href="https://github.com/avantigroupai/ProcessX/releases/download/v1.2.4/ProcessX-1.2.4-universal.dmg">Download the notarized disk image</a> — universal (Apple Silicon and Intel). Open it and drag ProcessX to the Applications folder beside it. The image is itself signed, notarized and stapled, and so is the app inside, so it opens with no Gatekeeper warning even on a first launch with no network. Requires macOS 26. <a href="https://github.com/avantigroupai/ProcessX/releases/latest">A zip is also available.</a></p>
+      <p><a href="https://github.com/avantigroupai/ProcessX/releases/download/v1.2.5/ProcessX-1.2.5-universal.dmg">Download the notarized disk image</a> — universal (Apple Silicon and Intel). Open it and drag ProcessX to the Applications folder beside it. The image is itself signed, notarized and stapled, and so is the app inside, so it opens with no Gatekeeper warning even on a first launch with no network. Requires macOS 26. <a href="https://github.com/avantigroupai/ProcessX/releases/download/v1.2.5/ProcessX-1.2.5-universal.zip">A zip is also available.</a></p>
       <p style="margin-top:16px">Or build it yourself with a Swift 6.2 toolchain — <span class="mono">bundle.sh</span> produces the same universal bundle, signed with whatever identity you have:</p>
       <div class="codeblock" style="margin-top:16px">git clone <span class="p">https://github.com/avantigroupai/ProcessX.git</span>
 cd ProcessX/swift <span class="c">&amp;&amp;</span> ./bundle.sh
@@ -765,6 +838,7 @@ npm test         <span class="c"># 179-check QA harness</span></div>
       </div>
       <div class="foot-links">
         <a href="https://github.com/avantigroupai/ProcessX">GitHub</a>
+        <a href="#agents">Agents</a>
         <a href="#features">Features</a>
         <a href="#safety">Safety</a>
         <a href="#alternatives">Alternatives</a>
